@@ -1,4 +1,4 @@
-MAGETAB and SDRF for Proteomics: A proteomics sample metadata representation for multiomics integration and big data analysis
+SDRF-Proteomics: Sample and Data Relationship Format for Proteomics
 =======================================================================
 
 .. image:: images/sample-metadata.png
