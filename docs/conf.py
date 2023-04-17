@@ -13,6 +13,6 @@ extensions = [
 asciidoc_output_format = 'html'
 
 # Set the path to your adoc files
-asciidoc_files = ['README.adoc']
+asciidoc_files = ['index.adoc']
 
 # Add any other asciidoc-specific configuration settings you need here
