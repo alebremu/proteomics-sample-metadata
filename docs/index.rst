@@ -1,10 +1,6 @@
 SDRF-Proteomics: Sample and Data Relationship Format for Proteomics
 =======================================================================
 
-.. image:: images/sample-metadata.png
-   :width: 600
-   :align: center
-
 Contents
 --------
 
@@ -12,6 +8,7 @@ Contents
    :maxdepth: 1
 
    introduction
+
 
 
 |
