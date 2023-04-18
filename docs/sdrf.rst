@@ -44,12 +44,12 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
      - Row 2, column 3
 
 
-.. list-table:: SDRF with free text
+.. list-table::
    :widths: 25 25 50
    :header-rows: 1
 
-   * - Heading source name
-     - Heading characteristics[organism]
+   * - source name
+     - characteristics[organism]
    * - sample 1
      - homo sapiens
    * - sample 2
