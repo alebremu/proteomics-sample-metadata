@@ -208,17 +208,41 @@ For each modification, different properties are captured using a key=value pair 
      - NT=Acetylation
      - Yes
      - Name of the Term in this particular case Modification, for custom modifications can be a name defined by the user.
-
-
-
-|Modification Accession  | AC | AC=UNIMOD:1    | :zero:             | Accession in an external database UNIMOD or PSI-MOD supported.
-|Chemical Formula        | CF | CF=H(2)C(2)O   | :zero:             | This is the chemical formula of the added or removed atoms. For the formula composition please follow the guidelines from http://www.unimod.org/names.html[UNIMOD]
-|Modification Type       | MT | MT=Fixed       | :zero: | This specifies which modification group the modification should be included with. Choose from the following options: [Fixed, Variable, Annotated]. _Annotated_ is used to search for all the occurrences of the modification into an annotated protein database file like UNIPROT XML or PEFF.
-|Position of the modification in the Polypeptide |  PP | PP=Any N-term | :zero: | Choose from the following options: [Anywhere, Protein N-term, Protein C-term, Any N-term, Any C-term]. Default is *Anywhere*.
-|Target Amino acid       | TA | TA=S,T,Y       | :white_check_mark: | The target amino acid letter. If the modification targets multiple sites, it can be separated by `,`.
-|Monoisotopic Mass       | MM | MM=42.010565   | :zero: | The exact atomic mass shift produced by the modification. Please use at least 5 decimal places of accuracy. This should only be used if the chemical formula of the modification is not known. If the chemical formula is specified, the monoisotopic mass will be overwritten by the calculated monoisotopic mass.
-|Target Site             | TS | TS=N[^P][ST]   | :zero: | For some software, it is important to capture complex rules for modification sites as regular expressions. These use cases should be specified as regular expressions.
-|===
+   * - Modification Accession
+     - AC
+     - AC=UNIMOD:1
+     - Yes
+     - Accession in an external database UNIMOD or PSI-MOD supported.
+   * - Chemical Formula
+     - CF
+     - CF=H(2)C(2)O
+     - No
+     - This is the chemical formula of the added or removed atoms. For the formula composition please follow the guidelines from http://www.unimod.org/names.html
+   * - Modification Type
+     - MT
+     - MT=Fixed
+     - No
+     - This specifies which modification group the modification should be included with. Choose from the following options: [Fixed, Variable, Annotated]. Annotated is used to search for all the occurrences of the modification into an annotated protein database file like UNIPROT XML or PEFF.
+   * - Position of the modification in the Polypeptide
+     - PP
+     - PP=Any N-term
+     - No
+     - Choose from the following options: [Anywhere, Protein N-term, Protein C-term, Any N-term, Any C-term]. Default is **Anywhere**.
+   * - Target Amino acid
+     - TA
+     - TA=S,T,Y
+     - No
+     - The target amino acid letter. If the modification targets multiple sites, it can be separated by `,`.
+   * - Monoisotopic Mass
+     - MM
+     - MM=42.010565
+     - No
+     - The exact atomic mass shift produced by the modification. Please use at least 5 decimal places of accuracy. This should only be used if the chemical formula of the modification is not known. If the chemical formula is specified, the monoisotopic mass will be overwritten by the calculated monoisotopic mass.
+   * - Target Site
+     - TS
+     - TS=N[^P][ST]
+     - No
+     - For some software, it is important to capture complex rules for modification sites as regular expressions. These use cases should be specified as regular expressions.
 
 We RECOMMEND for indicating the modification name, to use the UNIMOD interim name or the PSI-MOD name. For custom modifications, we RECOMMEND using an intuitive name. If the PTM is unknown (custom), the Chemical Formula or Monoisotopic Mass MUST be annotated.
 
