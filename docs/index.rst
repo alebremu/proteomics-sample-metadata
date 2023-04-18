@@ -1,4 +1,4 @@
-SDRF-Proteomics: Sample and Data Relationship Format for Proteomics
+SDRF-Proteomics:  for Proteomics
 =======================================================================
 
 Contents
@@ -8,15 +8,12 @@ Contents
    :maxdepth: 1
 
    introduction
-   relations
+   sdrf
    documentation
-
-
-
 
 |
 
-The following links should be followed to get support and help with the quantms maintainers:
+The following links should be followed to get support and help with the sdrf maintainers:
 
 |Report Issue| |Get help on GitHub Forum|
 
