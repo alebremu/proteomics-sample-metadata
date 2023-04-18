@@ -10,7 +10,7 @@ The SDRF-Proteomics file format describes the sample characteristics and the rel
 
 **Figure 2**: SDRF-Proteomics in a nutshell. The file format is a tab-delimited one where columns are properties of the sample, the data file or the variables under study. The rows are the samples of origin and the cells are the values for one property in a specific sample.
 
-SDRF-Proteomics format rules
+SDRF-Proteomics rules
 ******************************
 
 There are general scenarios/use cases that are addressed by the following rules:
@@ -151,9 +151,9 @@ Example:
 Label annotations
 ====================
 
-In order to annotate quantitative datasets, the SDRF file format uses tags for each channel associated with the sample in _comment[label]_. The label values are organized under the following ontology term Label. Some of the most popular labels are:
+In order to annotate quantitative datasets, the SDRF file format uses tags for each channel associated with the sample in **comment[label]**. The label values are organized under the following ontology term Label. Some of the most popular labels are:
 
-- For label-free experiments the value SHOULD be: label free sample
+- For label-free experiments the value SHOULD be: label free sample or the corresponding key value pair term: `AC=MS:1002038;NT=label free sample`
 - For TMT experiments the SDRF uses the PRIDE ontology terms under sample label. Here some examples of TMT channels:
 
   TMT126, TMT127, TMT127C, TMT127N, TMT128 , TMT128C, TMT128N, TMT129, TMT129C, TMT129N, TMT130, TMT130C, TMT130N, TMT131
@@ -162,18 +162,18 @@ In order to achieve a clear relationship between the label and the sample charac
 
 Examples:
 
-•	https://github.com/bigbio/proteomics-metadata-standard/blob/c69665600d5e0ddaf6099b4660cc70764ef6cddf/annotated-projects/PXD000612/sdrf.tsv[Label free]
-•	https://github.com/bigbio/proteomics-metadata-standard/blob/c69665600d5e0ddaf6099b4660cc70764ef6cddf/annotated-projects/PXD011799/sdrf.tsv[TMT]
-•	https://github.com/bigbio/proteomics-metadata-standard/blob/a141d6bc225e3df8d35e36f0035307f0c7fadf1d/annotated-projects/PXD017710/sdrf-silac.tsv[SILAC]
+- https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD000612/PXD000612.sdrf.tsv
+- https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD011799/PXD011799.sdrf.tsv
 
-[[instrument]]
-==== Type and Model of Mass Spectrometer
+Type and Model of Mass Spectrometer
+====================================
 
-The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed under https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false[instrument model term].
+The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed under https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false
 
-Additionally, it is strongly RECOMMENDED to include comment[MS2 analyzer type]. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of _comment[MS2 analyzer type]_ are mass analyzer types.
+Additionally, it is strongly RECOMMENDED to include `comment[MS2 analyzer type]`. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of `omment[MS2 analyzer type]` are mass analyzer types.
 
-=== Additional Data files technical properties
+Additional Data files technical properties
+===========================================
 
 It is RECOMMENDED to encode some of the technical parameters of the MS experiment as comments including the following parameters:
 
@@ -181,9 +181,8 @@ It is RECOMMENDED to encode some of the technical parameters of the MS experimen
 - Precursor and Fragment ion mass tolerances
 - Digestion Enzymes
 
-
-[[ptms]]
-==== Protein Modifications
+Protein Modifications
+---------------------------------
 
 Sample modifications (including both chemical modifications and post translational modifications, PTMs) are originated from multiple sources: artifactual modifications, isotope labeling, adducts that are encoded as PTMs (e.g. sodium) or the most biologically relevant PTMs.
 
@@ -195,11 +194,23 @@ The modification parameters are the name of the ontology term MS:1001055.
 
 For each modification, different properties are captured using a key=value pair structure including name, position, etc. All the possible (optional) features available for modification parameters are:
 
+.. list-table:: Minimum data metadata for any proteomics dataset
+   :widths: 14 14 14 14 14 14 14
+   :header-rows: 1
 
-|===
-|Property |Key |Example | Mandatory(:white_check_mark:)/Optional(:zero:) |comment
+   * - Property
+     - Key
+     - Example
+     - Mandatory(:white_check_mark:)/Optional(:zero:)
+     - comment
+   * - Name of the Modification
+     - NT
+     - NT=Acetylation
+     - :white_check_mark:
+     - Name of the Term in this particular case Modification, for custom modifications can be a name defined by the user.
 
-|Name of the Modification| NT | NT=Acetylation | :white_check_mark: | * Name of the Term in this particular case Modification, for custom modifications can be a name defined by the user.
+
+
 |Modification Accession  | AC | AC=UNIMOD:1    | :zero:             | Accession in an external database UNIMOD or PSI-MOD supported.
 |Chemical Formula        | CF | CF=H(2)C(2)O   | :zero:             | This is the chemical formula of the added or removed atoms. For the formula composition please follow the guidelines from http://www.unimod.org/names.html[UNIMOD]
 |Modification Type       | MT | MT=Fixed       | :zero: | This specifies which modification group the modification should be included with. Choose from the following options: [Fixed, Variable, Annotated]. _Annotated_ is used to search for all the occurrences of the modification into an annotated protein database file like UNIPROT XML or PEFF.
