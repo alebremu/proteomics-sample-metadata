@@ -57,4 +57,46 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 
 `NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E`
 
+SDRF-Proteomics: Samples metadata
+-----------------------------------
+
+The Sample metadata has different Categories/Headings to organize all the attributes/ column headers of a given sample. Each Sample contains a `source name` (accession) and a set of `characteristics`. Any proteomics sample MUST contain the following characteristics:
+
+- **source name**: Unique sample name (it can be present multiple times if the same sample is used several times in the same dataset)
+- **characteristics[organism]**: The organism of the Sample of origin.
+- **characteristics[disease]**: The disease under study in the Sample.
+- **characteristics[organism part]**: The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived (e.g. liver)
+- **characteristics[cell type]**: A cell type is a distinct morphological or functional form of cell. Examples are epithelial, glial etc.
+
+Example:
+
+.. list-table:: SDRF values annotated in free text
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - source name
+     - characteristics[organism]
+     - characteristics[organism part]
+     - characteristics[disease]
+     - characteristics[cell type]
+   * - sample_treat
+     - homo sapiens
+     - liver
+     - liver cancer
+     - liver cancer cell
+   * - sample_control
+     - homo sapiens
+     - liver
+     - liver cancer
+     - liver
+
+.. note:: Additional characteristics can be added depending on the type of the experiment and sample. The https://github.com/bigbio/proteomics-metadata-standard/tree/master/templates[SDRF-Proteomics templates] defines a set of templates and checklists of properties that should be provided depending on the proteomics experiment.
+
+Some important notes:
+
+- Each characteristics name in the column header SHOULD be a CV term from the EFO ontology. For example, the header _characteristics[organism]_ corresponds to the ontology term Organism.
+
+- Multiple values (columns) for the same characteristics term are allowed in SDRF-Proteomics. However, it is RECOMMENDED not to use the same column in the same file. If you have multiple phenotypes, you can specify what it refers to or use another more specific term, e.g. "immunophenotype".
+
+
 
