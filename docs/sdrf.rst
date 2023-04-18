@@ -29,22 +29,7 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 
 - Free Text (Human readable): In the free text representation, the value is provided as text without Ontology support (e.g. colon or providing accession numbers). This is only RECOMMENDED when the text inserted in the table is the exact name of an ontology/CV term in EFO. If the term is not in EFO, other ontologies can be used.
 
-.. list-table:: Title
-   :widths: 25 25 50
-   :header-rows: 1
-
-   * - Heading row 1, column 1
-     - Heading row 1, column 2
-     - Heading row 1, column 3
-   * - Row 1, column 1
-     -
-     - Row 1, column 3
-   * - Row 2, column 1
-     - Row 2, column 2
-     - Row 2, column 3
-
-
-.. list-table::
+.. list-table:: SDRF values annotated in free text
    :widths: 50 50
    :header-rows: 1
 
@@ -58,11 +43,11 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 - Ontology url (Computer readable): Users can provide the corresponding URI (Uniform Resource Identifier) of the ontology/CV term as a value. This is recommended for enriched files where the user does not want to use intermediate tools to map from free text to ontology/CV terms.
 
 .. list-table:: SDRF with ontology terms
-   :widths: 25 25 50
+   :widths: 50 50
    :header-rows: 1
 
-   * - Heading source name
-     - Heading characteristics[organism]
+   * - source name
+     - characteristics[organism]
    * - sample 1
      - http://purl.obolibrary.org/obo/NCBITaxon_9606
    * - sample 2
