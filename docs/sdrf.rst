@@ -45,7 +45,7 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 
 
 .. list-table::
-   :widths: 25 25 50
+   :widths: 50 50
    :header-rows: 1
 
    * - source name
