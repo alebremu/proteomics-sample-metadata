@@ -195,7 +195,7 @@ The modification parameters are the name of the ontology term MS:1001055.
 For each modification, different properties are captured using a key=value pair structure including name, position, etc. All the possible (optional) features available for modification parameters are:
 
 .. list-table:: Minimum data metadata for any proteomics dataset
-   :widths: 50 50
+   :widths: 20 20 20 20 20
    :header-rows: 1
 
    * - Property
