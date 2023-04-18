@@ -1,5 +1,5 @@
 SDRF: ample and Data Relationship Format
-========================================
+########################################
 
 The SDRF-Proteomics file format describes the sample characteristics and the relationships between samples and data files. The file format is a tab-delimited one where each ROW corresponds to a relationship between a Sample and a Data file (and MS signal corresponding to labelling in the context of multiplexed experiments), each column corresponds to an attribute/property of the Sample and the value in each cell is the specific value of the property for a given Sample (**Figure 1**).
 
@@ -11,7 +11,7 @@ The SDRF-Proteomics file format describes the sample characteristics and the rel
 **Figure 2**: SDRF-Proteomics in a nutshell. The file format is a tab-delimited one where columns are properties of the sample, the data file or the variables under study. The rows are the samples of origin and the cells are the values for one property in a specific sample.
 
 SDRF-Proteomics format rules
---------------------------------
+******************************
 
 There are general scenarios/use cases that are addressed by the following rules:
 
@@ -23,7 +23,7 @@ There are general scenarios/use cases that are addressed by the following rules:
 - **Extension**: The extension of the SDRF should be .tsv or .txt.
 
 SDRF-Proteomics values
-----------------------------
+******************************
 
 The value for each property (e.g. characteristics, comment) corresponding to each sample can be represented in multiple ways.
 
@@ -58,7 +58,7 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 `NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E`
 
 SDRF-Proteomics: Samples metadata
------------------------------------
+***********************************
 
 The Sample metadata has different Categories/Headings to organize all the attributes/ column headers of a given sample. Each Sample contains a `source name` (accession) and a set of `characteristics`. Any proteomics sample MUST contain the following characteristics:
 
@@ -103,7 +103,7 @@ Some important notes:
 - Multiple values (columns) for the same characteristics term are allowed in SDRF-Proteomics. However, it is RECOMMENDED not to use the same column in the same file. If you have multiple phenotypes, you can specify what it refers to or use another more specific term, e.g. "immunophenotype".
 
 SDRF-Proteomics: Data files metadata
-----------------------------------------
+************************************
 
 The connection between the Samples to the Data files is done by using a series of properties and attributes. All the properties referring to the MS run (file) itself are annotated with the category/prefix **comment**. The use of comment is mainly aimed at differentiating sample properties from the data properties. It matches a given sample to the corresponding file(s). The word comment is used for backwards-compatibility with gene expression experiments (RNA-Seq and Microarrays experiments).
 
@@ -146,8 +146,114 @@ Example:
      - NT=LTQ Orbitrap XL
      - 000261_C05_P0001563_A00_B00K_R2.RAW
 
+.. note:: All the possible _label_ values can be seen in the in the PRIDE CV under the https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false node.
 
-TIP: All the possible _label_ values can be seen in the in the PRIDE CV under the https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&viewMode=All&siblings=false[Label] node.
+Label annotations
+====================
+
+In order to annotate quantitative datasets, the SDRF file format uses tags for each channel associated with the sample in _comment[label]_. The label values are organized under the following ontology term Label. Some of the most popular labels are:
+
+- For label-free experiments the value SHOULD be: label free sample
+- For TMT experiments the SDRF uses the PRIDE ontology terms under sample label. Here some examples of TMT channels:
+
+  TMT126, TMT127, TMT127C, TMT127N, TMT128 , TMT128C, TMT128N, TMT129, TMT129C, TMT129N, TMT130, TMT130C, TMT130N, TMT131
+
+In order to achieve a clear relationship between the label and the sample characteristics, each channel of each sample (in multiplex experiments) SHOULD be defined in a separate row: one row per channel used (annotated with the corresponding _comment[label]_ per file.
+
+Examples:
+
+•	https://github.com/bigbio/proteomics-metadata-standard/blob/c69665600d5e0ddaf6099b4660cc70764ef6cddf/annotated-projects/PXD000612/sdrf.tsv[Label free]
+•	https://github.com/bigbio/proteomics-metadata-standard/blob/c69665600d5e0ddaf6099b4660cc70764ef6cddf/annotated-projects/PXD011799/sdrf.tsv[TMT]
+•	https://github.com/bigbio/proteomics-metadata-standard/blob/a141d6bc225e3df8d35e36f0035307f0c7fadf1d/annotated-projects/PXD017710/sdrf-silac.tsv[SILAC]
+
+[[instrument]]
+==== Type and Model of Mass Spectrometer
+
+The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed under https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false[instrument model term].
+
+Additionally, it is strongly RECOMMENDED to include comment[MS2 analyzer type]. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of _comment[MS2 analyzer type]_ are mass analyzer types.
+
+=== Additional Data files technical properties
+
+It is RECOMMENDED to encode some of the technical parameters of the MS experiment as comments including the following parameters:
+
+- Protein Modifications
+- Precursor and Fragment ion mass tolerances
+- Digestion Enzymes
+
+
+[[ptms]]
+==== Protein Modifications
+
+Sample modifications (including both chemical modifications and post translational modifications, PTMs) are originated from multiple sources: artifactual modifications, isotope labeling, adducts that are encoded as PTMs (e.g. sodium) or the most biologically relevant PTMs.
+
+It is RECOMMENDED to provide the modifications expected in the sample including the amino acid affected, whether it is Variable or Fixed (also Custom and Annotated modifications are supported) and included other properties such as mass shift/delta mass and the position (e.g. anywhere in the sequence).
+
+The RECOMMENDED name of the column for sample modification parameters is: comment[modification parameters].
+
+The modification parameters are the name of the ontology term MS:1001055.
+
+For each modification, different properties are captured using a key=value pair structure including name, position, etc. All the possible (optional) features available for modification parameters are:
+
+
+|===
+|Property |Key |Example | Mandatory(:white_check_mark:)/Optional(:zero:) |comment
+
+|Name of the Modification| NT | NT=Acetylation | :white_check_mark: | * Name of the Term in this particular case Modification, for custom modifications can be a name defined by the user.
+|Modification Accession  | AC | AC=UNIMOD:1    | :zero:             | Accession in an external database UNIMOD or PSI-MOD supported.
+|Chemical Formula        | CF | CF=H(2)C(2)O   | :zero:             | This is the chemical formula of the added or removed atoms. For the formula composition please follow the guidelines from http://www.unimod.org/names.html[UNIMOD]
+|Modification Type       | MT | MT=Fixed       | :zero: | This specifies which modification group the modification should be included with. Choose from the following options: [Fixed, Variable, Annotated]. _Annotated_ is used to search for all the occurrences of the modification into an annotated protein database file like UNIPROT XML or PEFF.
+|Position of the modification in the Polypeptide |  PP | PP=Any N-term | :zero: | Choose from the following options: [Anywhere, Protein N-term, Protein C-term, Any N-term, Any C-term]. Default is *Anywhere*.
+|Target Amino acid       | TA | TA=S,T,Y       | :white_check_mark: | The target amino acid letter. If the modification targets multiple sites, it can be separated by `,`.
+|Monoisotopic Mass       | MM | MM=42.010565   | :zero: | The exact atomic mass shift produced by the modification. Please use at least 5 decimal places of accuracy. This should only be used if the chemical formula of the modification is not known. If the chemical formula is specified, the monoisotopic mass will be overwritten by the calculated monoisotopic mass.
+|Target Site             | TS | TS=N[^P][ST]   | :zero: | For some software, it is important to capture complex rules for modification sites as regular expressions. These use cases should be specified as regular expressions.
+|===
+
+We RECOMMEND for indicating the modification name, to use the UNIMOD interim name or the PSI-MOD name. For custom modifications, we RECOMMEND using an intuitive name. If the PTM is unknown (custom), the Chemical Formula or Monoisotopic Mass MUST be annotated.
+
+An example of an SDRF-Proteomics file with sample modifications annotated, where each modification needs an extra column:
+
+|===
+| |comment[modification parameters] | comment[modification parameters]
+
+|sample 1| NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E | NT=Oxidation; MT=Variable; TA=M
+|===
+
+[[cleavage-agents]]
+==== Cleavage agents
+
+The REQUIRED _comment [cleavage agent details]_ property is used to capture the enzyme information. Similar to protein modification a key=value pair representation is used to encode the following properties for each enzyme:
+
+|===
+|Property           |Key |Example     | Mandatory(:white_check_mark:)/Optional(:zero:) | comment
+|Name of the Enzyme | NT | NT=Trypsin | :white_check_mark:                             | * Name of the Term in this particular case Name of the Enzyme.
+|Enzyme Accession | AC | AC=MS:1001251 | :zero:                                      | Accession in an external PSI-MS Ontology definition under the following category https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1001045[Cleavage agent name].
+|Cleavage site regular expression | CS | CS=(?<=[KR])(?!P) | :zero: | The cleavage site defined as a regular expression.
+|===
+
+An example of an SDRF-Proteomics with annotated endopeptidase:
+
+|===
+| source name |...|comment[cleavage agent details]
+
+|sample 1| ....|NT=Trypsin; AC=MS:1001251; CS=(?<=[KR])(?!P)
+|===
+
+NOTE: If no endopeptidase is used, for example in the case of Top-down/intact protein experiments, the value SHOULD be ‘not applicable’.
+
+==== Precursor and Fragment mass tolerances
+
+For proteomics experiments, it is important to encode different mass tolerances (for precursor and fragment ions).
+
+|===
+| |comment[fragment mass tolerance]	| comment[precursor mass tolerance]
+
+|sample 1| 0.6 Da |	20 ppm
+|===
+
+Units for the mass tolerances (either Da or ppm) MUST be provided.
+
+
 
 
 
