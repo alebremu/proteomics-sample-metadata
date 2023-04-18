@@ -41,7 +41,7 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 
 - Ontology url (Computer readable): Users can provide the corresponding URI (Uniform Resource Identifier) of the ontology/CV term as a value. This is recommended for enriched files where the user does not want to use intermediate tools to map from free text to ontology/CV terms.
 
-.. list-table:: SDRF with free text
+.. list-table:: SDRF with ontology terms
    :widths: 25 25 50
    :header-rows: 1
 
