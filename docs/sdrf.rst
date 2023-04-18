@@ -201,12 +201,12 @@ For each modification, different properties are captured using a key=value pair 
    * - Property
      - Key
      - Example
-     - Mandatory(:white_check_mark:)/Optional(:zero:)
+     - Required
      - comment
    * - Name of the Modification
      - NT
      - NT=Acetylation
-     - :white_check_mark:
+     - Yes
      - Name of the Term in this particular case Modification, for custom modifications can be a name defined by the user.
 
 
