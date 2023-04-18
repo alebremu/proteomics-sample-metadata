@@ -23,10 +23,9 @@ Use cases
 
 The following use cases can be defined for the format:
 
-- Capturing the experimental design of a proteomics experiment, particularly the relationship between the samples analyzed and the instrument files generated during data acquisition in the laboratory. This use case is essential to establish a clear understanding of the data acquisition process.
-- Capturing the experimental design of a proteomics experiment, particularly the relationship between the samples analyzed and the instrument files generated during data acquisition in the laboratory. This use case is essential to establish a clear understanding of the data acquisition process.
-- Capturing sample metadata, including information on the source and any treatments applied that could affect data analysis. This information is crucial in interpreting the results of the experiment.
-- Providing comprehensive metadata for instrument files, so that users can have a general understanding of how the data was acquired. This use case is important in ensuring the validity and reliability of the results of data analysis.
+- Capturing the experimental design of a proteomics experiment, particularly the relationship between the samples analyzed and the instrument files generated during data acquisition in the laboratory.
+- Capturing sample metadata, including information on the source and any treatments applied that could affect data analysis.
+- Providing comprehensive metadata for instrument files, so that users can have a general understanding of how the data was acquired.
 
 Specifications
 ---------------------
@@ -39,4 +38,4 @@ The SDRF-Proteomics format describes the sample characteristics and the relation
 - The SDRF file must start with columns describing the properties of the sample (e.g. organism, disease, phenotype etc), followed by the properties of data files which was generated from the analysis of the experimental results (e.g. =label, faction identifier, data file etc).
 - Support for handling unknown values/characteristics.
 
-The SDRF-Proteomics aims to capture the sample metadata and its relationship with the data files (e.g., raw files from mass spectrometers).  The SDRF-Proteomics does not aim to capture the downstream analysis part of the experimental design including details of which samples were compared to which other samples, how samples are combined into study variables or parameters for the downstream analysis such as FDR or p-values thresholds. The HUPO-PSI community will work in the future to include this information is other file formats such as mzTab or a new type of file format.
+The SDRF-Proteomics aims to capture the sample metadata and its relationship with the data files (e.g., raw files from mass spectrometers). The SDRF-Proteomics does not aim to capture the downstream analysis part of the experimental design including details of which samples were compared to which other samples, how samples are combined into study variables or parameters for the downstream analysis such as FDR or p-values thresholds. The HUPO-PSI community will work in the future to include this information is other file formats such as mzTab or a new type of file format.
