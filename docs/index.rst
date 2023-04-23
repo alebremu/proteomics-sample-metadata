@@ -12,6 +12,7 @@ Contents
    templates
    additional
    documentation
+   tools
 
 |
 

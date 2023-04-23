@@ -6,24 +6,24 @@ Ontologies/Controlled Vocabularies Supported
 
 The list of ontologies/controlled vocabularies (CV) supported are:
 
--	PSI Mass Spectrometry CV (PSI-MS)
--	Experimental Factor Ontology (EFO).
--	Unimod protein modification database for mass spectrometry
--	PSI-MOD CV (PSI-MOD)
--	Cell line ontology
--	Drosophila anatomy ontology
--	Cell ontology
--	Plant ontology
--	Uber-anatomy ontology
--	Zebrafish anatomy and development ontology
--	Zebrafish developmental stages ontology
--	Plant Environment Ontology
--	FlyBase Developmental Ontology
--	Rat Strain Ontology
--	Chemical Entities of Biological Interest Ontology
--	NCBI organismal classification
--	PATO - the Phenotype and Trait Ontology
--	PRIDE Controlled Vocabulary (CV)
+-	PSI Mass Spectrometry CV (`PSI-MS <https://www.ebi.ac.uk/ols/ontologies/ms>`_)
+-	Experimental Factor Ontology (`EFO <https://www.ebi.ac.uk/ols/ontologies/efo>`_).
+-	Unimod protein modification database for mass spectrometry (`UNIMOD <https://www.ebi.ac.uk/ols/ontologies/unimod>`_)
+-	PSI-MOD CV (`PSI-MOD <https://www.ebi.ac.uk/ols/ontologies/mod>`_)
+-	Cell line ontology (`CLO <https://www.ebi.ac.uk/ols/ontologies/clo>`_)
+-	Drosophila anatomy ontology (`FBBT <https://www.ebi.ac.uk/ols/ontologies/fbbt>`_)
+-	Cell ontology (`CL <https://www.ebi.ac.uk/ols/ontologies/cl>`_)
+-	Plant ontology (`PO <https://www.ebi.ac.uk/ols/ontologies/po>`_)
+-	Uber-anatomy ontology (`UBERON <https://www.ebi.ac.uk/ols/ontologies/uberon>`_)
+-	Zebrafish anatomy and development ontology (`ZFA <https://www.ebi.ac.uk/ols/ontologies/zfa>`_)
+-	Zebrafish developmental stages ontology (`ZFS <https://www.ebi.ac.uk/ols/ontologies/zfs>`_)
+-	Plant Environment Ontology (`PEO <https://www.ebi.ac.uk/ols/ontologies/peo>`_)
+-	FlyBase Developmental Ontology (`FBdv <https://www.ebi.ac.uk/ols/ontologies/fbdv>`_)
+-	Rat Strain Ontology (`RSO <https://www.ebi.ac.uk/ols/ontologies/rso>`_)
+-	Chemical Entities of Biological Interest Ontology (`CHEBI <https://www.ebi.ac.uk/ols/ontologies/chebi>`_)
+-	NCBI organismal classification (`NCBITaxon <https://www.ebi.ac.uk/ols/ontologies/ncbitaxon>`_)
+-	PATO - the Phenotype and Trait Ontology (`PATO <https://www.ebi.ac.uk/ols/ontologies/pato>`_)
+-	PRIDE Controlled Vocabulary (`PRIDE <https://www.ebi.ac.uk/ols/ontologies/pride>`_)
 
 Relations with other formats
 -----------------------------------------------
