@@ -27,13 +27,13 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
      - Non-vertebrates
      - Plants
      - Cell lines
-    * - source name
-      - :octicon:`check-circle;1em;sd-text-info`
-      - required
-      - required
-      - required
-      - required
-      - required
+   * - source name
+     - :octicon:`check-circle;1em;sd-text-info`
+     - required
+     - required
+     - required
+     - required
+     - required
 
 
 |===
