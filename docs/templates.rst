@@ -28,41 +28,157 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
      - Plants
      - Cell lines
    * - source name
-     - :octicon:`check-circle;1em;sd-text-info`
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[organism]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[strain/breed]
+     -
+     -
+     -
+     - required
+     -
+     -
+   * - characteristics[ecotype/cultivar]
+     -
+     -
+     -
+     -
+     - required
+     -
+   * - characteristics[ancestry category]
+     -
+     - required
+     -
+     -
+     -
+     -
+   * - characteristics[age]
+     -
+     - required
+     - required
+     -
+     - required
+     -
+   * - characteristics[developmental stage]
+     -
+     - required
+     - required
+     -
+     - required
+     -
+   * - characteristics[sex]
+     -
+     - required
+     - required
+     -
+     - required
+     -
+   * - characteristics[organism part]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[cell type]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - technology type
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[disease]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[individual]
+     -
+     - required
+     -
+     -
+     -
+     -
+   * - characteristics[biological replicate]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - characteristics[cell line]
+     -
+     -
+     - 
+     -
+     -
+     - required
+   * -
+     -
+     -
+     -
+     -
+     -
+     -
+   * - assay name
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - comment[data file]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - comment[technical replicate]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - comment[fraction identifier]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - comment[label]
+     - required
+     - required
+     - required
+     - required
+     - required
+     - required
+   * - comment[instrument]
+     - required
      - required
      - required
      - required
      - required
      - required
 
-
-|===
-|                                       | Default            |Human              | Vertebrates       | Non-vertebrates   | Plants            | Cell lines
-|source name                            | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|characteristics[organism]              | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|characteristics[strain/breed]          |                    |                   |                   |:zero:             |                   |:zero:
-|characteristics[ecotype/cultivar]      |                    |                   |                   |                   |:zero:             |
-|characteristics[ancestry category]     |                    |:white_check_mark: |                   |                   |                   |
-|characteristics[age]                   |                    |:white_check_mark: |:zero:             |                   |:zero:             |
-|characteristics[developmental stage]   |                    |:zero:             |:zero:             |                   |:zero:             |
-|characteristics[sex]                   |                    |:white_check_mark: |:zero:             |                   |                   |
-|characteristics[disease]               | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |                   |:white_check_mark:
-|characteristics[organism part]         | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|characteristics[cell type]             | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|technology type                        | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|characteristics[individual]            |                    |:zero:             |:zero:             |:zero:             |:zero:             |:zero:
-|characteristics[cell line]             |                    |                   |                   |                   |                   |:white_check_mark:
-|characteristics[biological replicate]  |:white_check_mark:  |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|                                       |                    |                   |                   |                   |                   |
-|assay name                             | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[data file]                     | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[technical replicate]           | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[fraction identifier]           | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[label]                         | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[cleavage agent details]        | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-|comment[instrument]                    | :white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark: |:white_check_mark:
-
-|===
-
-* :white_check_mark: : Required Attributes for each sample Type (e.g. Human, Vertebrates).
-* :zero: : Optional Attribute
