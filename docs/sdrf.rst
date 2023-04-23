@@ -94,7 +94,7 @@ Example:
      - liver cancer
      - liver
 
-.. note:: Additional characteristics can be added depending on the type of the experiment and sample. The `SDRF-Proteomics templates https://github.com/bigbio/proteomics-metadata-standard/tree/master/templates`_ defines a set of templates and checklists of properties that should be provided depending on the proteomics experiment.
+.. note:: Additional characteristics can be added depending on the type of the experiment and sample. The `SDRF-Proteomics templates <https://github.com/bigbio/proteomics-metadata-standard/tree/master/templates>`_ defines a set of templates and checklists of properties that should be provided depending on the proteomics experiment.
 
 Some important notes:
 
@@ -146,7 +146,7 @@ Example:
      - NT=LTQ Orbitrap XL
      - 000261_C05_P0001563_A00_B00K_R2.RAW
 
-.. note:: All the possible _label_ values can be seen in the in the PRIDE CV under `labels https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false`_ node.
+.. note:: All the possible _label_ values can be seen in the in the PRIDE CV under `labels <https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false>`_ node.
 
 Label annotations
 ====================
