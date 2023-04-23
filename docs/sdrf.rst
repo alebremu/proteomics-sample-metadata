@@ -10,7 +10,7 @@ The SDRF-Proteomics file format describes the sample characteristics and the rel
 
 **Figure 2**: SDRF-Proteomics in a nutshell. The file format is a tab-delimited one where columns are properties of the sample, the data file or the variables under study. The rows are the samples of origin and the cells are the values for one property in a specific sample.
 
-SDRF-Proteomics rules
+Rules
 ******************************
 
 There are general scenarios/use cases that are addressed by the following rules:
@@ -22,7 +22,7 @@ There are general scenarios/use cases that are addressed by the following rules:
 - **Column order**: The SDRF MUST start with the source name column (accession/name of the sample of origin), then all the sample characteristics; followed by the assay name corresponding to the MS run. Finally, after the assay name all the comments (properties of the data file generated).
 - **Extension**: The extension of the SDRF should be .tsv or .txt.
 
-SDRF-Proteomics values
+Values
 ******************************
 
 The value for each property (e.g. characteristics, comment) corresponding to each sample can be represented in multiple ways.
@@ -57,7 +57,7 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
 
 `NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E`
 
-SDRF-Proteomics: Samples metadata
+Samples metadata
 ***********************************
 
 The Sample metadata has different Categories/Headings to organize all the attributes/ column headers of a given sample. Each Sample contains a `source name` (accession) and a set of `characteristics`. Any proteomics sample MUST contain the following characteristics:
@@ -102,7 +102,7 @@ Some important notes:
 
 - Multiple values (columns) for the same characteristics term are allowed in SDRF-Proteomics. However, it is RECOMMENDED not to use the same column in the same file. If you have multiple phenotypes, you can specify what it refers to or use another more specific term, e.g. "immunophenotype".
 
-SDRF-Proteomics: Data files metadata
+Data files metadata
 ************************************
 
 The connection between the Samples to the Data files is done by using a series of properties and attributes. All the properties referring to the MS run (file) itself are annotated with the category/prefix **comment**. The use of comment is mainly aimed at differentiating sample properties from the data properties. It matches a given sample to the corresponding file(s). The word comment is used for backwards-compatibility with gene expression experiments (RNA-Seq and Microarrays experiments).
@@ -111,12 +111,13 @@ The order of the columns is important, **assay name** MUST always be located bef
 
 - **assay name**: assay name is an accession for each msrun. Because of back-compatibility with SDRF in transcriptomics we don't use the term ms run but the more generic term `assay name`. Examples of assay names are: “run 1”, “run_fraction_1_2”, it must be a unique accession for every msrun.
 
-- **comment[fraction identifier]**: The fraction identifier allows to record the number of a given fraction. The fraction identifier corresponds to this ontology term. It MUST start from 1 and if the experiment is not fractionated, 1 MUST be used for each MSRun (assay).
+- **comment[fraction identifier]**: The fraction identifier allows to record the number of a given fraction. The fraction identifier corresponds to this ontology term. It MUST start from `1` and if the experiment is not fractionated, 1 MUST be used for each MSRun (assay).
 
-- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used <<label-data>>.
-- **comment[data file]**: T
-he data file provides the name of the raw file generated  by the instrument. The data files can be instrument raw files but also converted peak lists such as mzML, MGF or result files like mzIdentML.
-- **comment[instrument]**: Instrument model used to capture the sample <<instrument>>.
+- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used :ref:`label data<Label annotations>`.
+
+- **comment[data file]**: The data file provides the name of the raw file generated  by the instrument. The data files can be instrument raw files but also converted peak lists such as mzML, MGF or result files like mzIdentML.
+
+- **comment[instrument]**: Instrument model used to capture the sample :ref:`instrument<Instrument information>`.
 
 Example:
 
@@ -165,7 +166,7 @@ Examples:
 - `PXD000612 <https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD000612/PXD000612.sdrf.tsv>`_
 - `PXD011799 <https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD011799/PXD011799.sdrf.tsv>`_
 
-Type and Model of Mass Spectrometer
+Instrument information
 ====================================
 
 The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed in `PSI-MS <https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false>`_
