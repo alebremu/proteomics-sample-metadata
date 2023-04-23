@@ -184,15 +184,7 @@ It is RECOMMENDED to encode some of the technical parameters of the MS experimen
 Protein Modifications
 ---------------------------------
 
-Sample modifications (including both chemical modifications and post translational modifications, PTMs) are originated from multiple sources: artifactual modifications, isotope labeling, adducts that are encoded as PTMs (e.g. sodium) or the most biologically relevant PTMs.
-
-It is RECOMMENDED to provide the modifications expected in the sample including the amino acid affected, whether it is Variable or Fixed (also Custom and Annotated modifications are supported) and included other properties such as mass shift/delta mass and the position (e.g. anywhere in the sequence).
-
-The RECOMMENDED name of the column for sample modification parameters is: comment[modification parameters].
-
-The modification parameters are the name of the ontology term MS:1001055.
-
-For each modification, different properties are captured using a key=value pair structure including name, position, etc. All the possible (optional) features available for modification parameters are:
+Sample modifications (including both chemical modifications and post translational modifications, PTMs) are originated from multiple sources: artifactual modifications, isotope labeling, adducts that are encoded as PTMs (e.g. sodium) or the most biologically relevant PTMs. It is RECOMMENDED to provide the modifications expected in the sample including the amino acid affected, whether it is Variable or Fixed (also Custom and Annotated modifications are supported) and included other properties such as mass shift/delta mass and the position (e.g. anywhere in the sequence). The RECOMMENDED name of the column for sample modification parameters is: comment[modification parameters]. The modification parameters are the name of the ontology term MS:1001055. For each modification, different properties are captured using a key=value pair structure including name, position, etc. All the possible (optional) features available for modification parameters are:
 
 .. list-table:: Minimum data metadata for any proteomics dataset
    :widths: 20 20 20 20 20
@@ -244,49 +236,89 @@ For each modification, different properties are captured using a key=value pair 
      - No
      - For some software, it is important to capture complex rules for modification sites as regular expressions. These use cases should be specified as regular expressions.
 
-We RECOMMEND for indicating the modification name, to use the UNIMOD interim name or the PSI-MOD name. For custom modifications, we RECOMMEND using an intuitive name. If the PTM is unknown (custom), the Chemical Formula or Monoisotopic Mass MUST be annotated.
+.. note:: We RECOMMEND for indicating the modification name, to use the UNIMOD interim name or the PSI-MOD name. For custom modifications, we RECOMMEND using an intuitive name. If the PTM is unknown (custom), the Chemical Formula or Monoisotopic Mass MUST be annotated.
 
 An example of an SDRF-Proteomics file with sample modifications annotated, where each modification needs an extra column:
 
-|===
-| |comment[modification parameters] | comment[modification parameters]
+.. list-table:: Example about how to annotated two modifications in SDRF-Proteomics
+   :widths: 25 25 25 25
+   :header-rows: 1
 
-|sample 1| NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E | NT=Oxidation; MT=Variable; TA=M
-|===
+   * - source name
+     - ...
+     - comment[modification parameters]
+     - comment[modification parameters]
+   * - Sample 1
+     - ...
+     - NT=Glu->pyro-Glu;MT=fixed;PP=Anywhere;AC=Unimod:27;TA=E
+     - NT=Oxidation;MT=Variable;TA=M
 
-[[cleavage-agents]]
-==== Cleavage agents
+Cleavage agents
+--------------------------------------
 
-The REQUIRED _comment [cleavage agent details]_ property is used to capture the enzyme information. Similar to protein modification a key=value pair representation is used to encode the following properties for each enzyme:
+The REQUIRED **comment[cleavage agent details]** property is used to capture the enzyme information. Similar to protein modification a key=value pair representation is used to encode the following properties for each enzyme:
 
-|===
-|Property           |Key |Example     | Mandatory(:white_check_mark:)/Optional(:zero:) | comment
-|Name of the Enzyme | NT | NT=Trypsin | :white_check_mark:                             | * Name of the Term in this particular case Name of the Enzyme.
-|Enzyme Accession | AC | AC=MS:1001251 | :zero:                                      | Accession in an external PSI-MS Ontology definition under the following category https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1001045[Cleavage agent name].
-|Cleavage site regular expression | CS | CS=(?<=[KR])(?!P) | :zero: | The cleavage site defined as a regular expression.
-|===
+.. list-table:: Example about how to annotated two modifications in SDRF-Proteomics
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Property
+     - Key
+     - Example
+     - Required
+     - comment
+   * - Name of the Enzyme
+     - NT
+     - NT=Trypsin
+     - required
+     - Name of the Term in this particular case Name of the Enzyme.
+   * - Enzyme Accession
+     - AC
+     - AC=MS:1001251
+     - required
+     - Accession in an external PSI-MS Ontology definition under the following category https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1001045
+   * - Cleavage site regular expression
+     - CS
+     - CS=(?<=[KR])(?!P)
+     - optional
+     - The cleavage site defined as a regular expression.
 
 An example of an SDRF-Proteomics with annotated endopeptidase:
 
-|===
-| source name |...|comment[cleavage agent details]
+.. list-table:: Example about how to annotated enzymes in SDRF-Proteomics
+   :widths: 20 20 60
+   :header-rows: 1
 
-|sample 1| ....|NT=Trypsin; AC=MS:1001251; CS=(?<=[KR])(?!P)
-|===
+   * - source name
+     - ...
+     - comment[cleavage agent details]
+   * - Sample 1
+     - ...
+     - NT=Trypsin;AC=MS:1001251;CS=(?<=[KR])(?!P)
 
-NOTE: If no endopeptidase is used, for example in the case of Top-down/intact protein experiments, the value SHOULD be ‘not applicable’.
+.. note:: If no endopeptidase is used, for example in the case of Top-down/intact protein experiments, the value SHOULD be ‘not applicable’.
 
-==== Precursor and Fragment mass tolerances
+Precursor and Fragment mass tolerances
+--------------------------------------
 
 For proteomics experiments, it is important to encode different mass tolerances (for precursor and fragment ions).
 
-|===
-| |comment[fragment mass tolerance]	| comment[precursor mass tolerance]
+Example:
 
-|sample 1| 0.6 Da |	20 ppm
-|===
+.. list-table:: Example about how to annotated torelances in SDRF-Proteomics
+   :widths: 20 20 30 30
+   :header-rows: 1
 
-Units for the mass tolerances (either Da or ppm) MUST be provided.
+   * - source name
+     - ...
+     - comment[fragment mass tolerance]
+     - comment[precursor mass tolerance]
+   * - Sample 1
+     - ...
+     - 0.6 Da
+     - 20 ppm
+
+.. note:: Units for the mass tolerances (either Da or ppm) MUST be provided.
 
 
 
