@@ -9,6 +9,7 @@ Contents
 
    introduction
    sdrf
+   templates
    documentation
 
 |

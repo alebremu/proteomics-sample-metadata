@@ -310,7 +310,7 @@ For proteomics experiments, it is important to encode different mass tolerances 
 
 Example:
 
-.. list-table:: Example about how to annotated torelances in SDRF-Proteomics
+.. list-table:: Example about how to annotated tolerances in SDRF-Proteomics
    :widths: 20 20 30 30
    :header-rows: 1
 
