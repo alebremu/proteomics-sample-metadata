@@ -161,7 +161,7 @@ In order to annotate quantitative datasets, the SDRF file format uses tags for e
 
   TMT126, TMT127, TMT127C, TMT127N, TMT128 , TMT128C, TMT128N, TMT129, TMT129C, TMT129N, TMT130, TMT130C, TMT130N, TMT131
 
-In order to achieve a clear relationship between the label and the sample characteristics, each channel of each sample (in multiplex experiments) SHOULD be defined in a separate row: one row per channel used (annotated with the corresponding _comment[label]_ per file.
+In order to achieve a clear relationship between the label and the sample characteristics, each channel of each sample (in multiplex experiments) SHOULD be defined in a separate row: one row per channel used (annotated with the corresponding `comment[label]` per file.
 
 Examples:
 
@@ -173,9 +173,9 @@ Examples:
 Instrument information
 ====================================
 
-The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed in `PSI-MS <https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false>`_
+The model of the mass spectrometer SHOULD be specified as `comment[instrument]`. Possible values are listed in `PSI-MS <https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false>`_
 
-Additionally, it is strongly RECOMMENDED to include `comment[MS2 analyzer type]`. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of `omment[MS2 analyzer type]` are mass analyzer types.
+Additionally, it is strongly RECOMMENDED to include `comment[MS2 analyzer type]`. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of `comment[MS2 analyzer type]` are mass analyzer types.
 
 Additional Data files technical properties
 ===========================================
