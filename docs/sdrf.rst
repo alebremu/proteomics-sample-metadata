@@ -117,7 +117,7 @@ The order of the columns is important, **assay name** MUST always be located bef
 
 - **comment[data file]**: The data file provides the name of the raw file generated  by the instrument. The data files can be instrument raw files but also converted peak lists such as mzML, MGF or result files like mzIdentML.
 
-- **comment[instrument]**: Instrument model used to capture the sample :ref:`instrument<Instrument information>`.
+- **comment[instrument]**: Instrument model used to capture the sample :ref:`instrument-information`.
 
 Example:
 
@@ -167,6 +167,8 @@ Examples:
 
 - `PXD000612 <https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD000612/PXD000612.sdrf.tsv>`_
 - `PXD011799 <https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD011799/PXD011799.sdrf.tsv>`_
+
+.. _instrument-information:
 
 Instrument information
 ====================================
