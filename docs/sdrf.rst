@@ -94,7 +94,7 @@ Example:
      - liver cancer
      - liver
 
-.. note:: Additional characteristics can be added depending on the type of the experiment and sample. The https://github.com/bigbio/proteomics-metadata-standard/tree/master/templates[SDRF-Proteomics templates] defines a set of templates and checklists of properties that should be provided depending on the proteomics experiment.
+.. note:: Additional characteristics can be added depending on the type of the experiment and sample. The `SDRF-Proteomics templates https://github.com/bigbio/proteomics-metadata-standard/tree/master/templates`_ defines a set of templates and checklists of properties that should be provided depending on the proteomics experiment.
 
 Some important notes:
 
@@ -146,7 +146,7 @@ Example:
      - NT=LTQ Orbitrap XL
      - 000261_C05_P0001563_A00_B00K_R2.RAW
 
-.. note:: All the possible _label_ values can be seen in the in the PRIDE CV under the https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false node.
+.. note:: All the possible _label_ values can be seen in the in the PRIDE CV under `labels https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false`_ node.
 
 Label annotations
 ====================
@@ -162,13 +162,13 @@ In order to achieve a clear relationship between the label and the sample charac
 
 Examples:
 
-- https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD000612/PXD000612.sdrf.tsv
-- https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD011799/PXD011799.sdrf.tsv
+- `PXD000612 https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD000612/PXD000612.sdrf.tsv`_
+- `PXD011799 https://github.com/bigbio/proteomics-sample-metadata/blob/master/annotated-projects/PXD011799/PXD011799.sdrf.tsv`_
 
 Type and Model of Mass Spectrometer
 ====================================
 
-The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed under https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false
+The model of the mass spectrometer SHOULD be specified as _comment[instrument]_. Possible values are listed in `PSI-MS https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1000031&viewMode=All&siblings=false`_
 
 Additionally, it is strongly RECOMMENDED to include `comment[MS2 analyzer type]`. This is important e.g. for Orbitrap models where MS2 scans can be acquired either in the Orbitrap or in the ion trap. Setting this value allows to differentiate high-resolution MS/MS data. Possible values of `omment[MS2 analyzer type]` are mass analyzer types.
 
@@ -209,7 +209,7 @@ Sample modifications (including both chemical modifications and post translation
      - CF
      - CF=H(2)C(2)O
      - No
-     - This is the chemical formula of the added or removed atoms. For the formula composition please follow the guidelines from http://www.unimod.org/names.html
+     - This is the chemical formula of the added or removed atoms. For the formula composition please follow the `guidelines http://www.unimod.org/names.html`_
    * - Modification Type
      - MT
      - MT=Fixed
@@ -276,7 +276,7 @@ The REQUIRED **comment[cleavage agent details]** property is used to capture the
      - AC
      - AC=MS:1001251
      - required
-     - Accession in an external PSI-MS Ontology definition under the following category https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1001045
+     - Accession in an external PSI-MS Ontology definition under the following category `cleavage agent name https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_1001045`_
    * - Cleavage site regular expression
      - CS
      - CS=(?<=[KR])(?!P)
