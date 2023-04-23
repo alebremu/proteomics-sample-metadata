@@ -128,7 +128,7 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
    * - characteristics[cell line]
      -
      -
-     - 
+     -
      -
      -
      - required
