@@ -113,7 +113,7 @@ The order of the columns is important, **assay name** MUST always be located bef
 
 - **comment[fraction identifier]**: The fraction identifier allows to record the number of a given fraction. The fraction identifier corresponds to this ontology term. It MUST start from `1` and if the experiment is not fractionated, 1 MUST be used for each MSRun (assay).
 
-- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used :ref:`Label annotations`.
+- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used :ref:`label-annotations`.
 
 - **comment[data file]**: The data file provides the name of the raw file generated  by the instrument. The data files can be instrument raw files but also converted peak lists such as mzML, MGF or result files like mzIdentML.
 
@@ -148,6 +148,8 @@ Example:
      - 000261_C05_P0001563_A00_B00K_R2.RAW
 
 .. note:: All the possible _label_ values can be seen in the in the PRIDE CV under `labels <https://www.ebi.ac.uk/ols/ontologies/pride/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FPRIDE_0000514&lang=en&viewMode=All&siblings=false>`_ node.
+
+.. _label-annotations:
 
 Label annotations
 ====================
