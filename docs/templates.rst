@@ -17,7 +17,7 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
 **Sample attributes**: Minimum sample attributes for primary cells from different species and cell lines
 
 .. list-table:: SDRF-Proteomics templates sample attributes
-   :widths: 14 14 14 14 14 14
+   :widths: 14 14 14 14 14 14 14
    :header-rows: 1
 
    * -
