@@ -113,7 +113,7 @@ The order of the columns is important, **assay name** MUST always be located bef
 
 - **comment[fraction identifier]**: The fraction identifier allows to record the number of a given fraction. The fraction identifier corresponds to this ontology term. It MUST start from `1` and if the experiment is not fractionated, 1 MUST be used for each MSRun (assay).
 
-- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used :ref:`label data<Label annotations>`.
+- **comment[label]**: label describes the label applied to each Sample (if any). In case of multiplex experiments such as TMT, SILAC, and/or ITRAQ the corresponding label SHOULD be added. For Label-free experiments the label free sample term MUST be used :ref:`Label annotations`.
 
 - **comment[data file]**: The data file provides the name of the raw file generated  by the instrument. The data files can be instrument raw files but also converted peak lists such as mzML, MGF or result files like mzIdentML.
 
