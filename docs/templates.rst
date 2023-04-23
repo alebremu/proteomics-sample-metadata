@@ -28,12 +28,12 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
      - Plants
      - Cell lines
     * - source name
-      - :white_check_mark:
-      - :white_check_mark:
-      - :white_check_mark:
-      - :white_check_mark:
-      - :white_check_mark:
-      - :white_check_mark:
+      - required
+      - required
+      - required
+      - required
+      - required
+      - required
 
 
 |===
