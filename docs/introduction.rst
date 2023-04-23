@@ -5,8 +5,8 @@ Many resources have emerged that provide raw or integrated proteomics data in th
 
 Unfortunately, proteomics experimental design and sample related information are often missing in public repositories or stored in very diverse ways and formats. For example:
 
- - `CPTAC consortium https://cptac-data-portal.georgetown.edu/`_ provides for every dataset a set of excel files with the information on each sample (e.g. `S048 https://cptac-data-portal.georgetown.edu/study-summary/S048`_) including tumor size, origin, but also how every sample is related to a specific raw file (e.g. instrument configuration parameters).
- - ProteomicsDB, captures for each sample in the database a minimum number of properties to describe the sample and the related experimental protocol such as tissue, digestion method and instrument (e.g. `Project 4267 https://www.proteomicsdb.org/#projects/4267/6228`_).
+ - `CPTAC consortium <https://cptac-data-portal.georgetown.edu/>`_ provides for every dataset a set of excel files with the information on each sample (e.g. `S048 <https://cptac-data-portal.georgetown.edu/study-summary/S048>`_) including tumor size, origin, but also how every sample is related to a specific raw file (e.g. instrument configuration parameters).
+ - ProteomicsDB, captures for each sample in the database a minimum number of properties to describe the sample and the related experimental protocol such as tissue, digestion method and instrument (e.g. `Project 4267 <https://www.proteomicsdb.org/#projects/4267/6228>`_).
  -  ProteomeXchange submissions only required a minimum unstructured metadata such as species, instruments, post-translational modifications or disease. This metadata is captured at the project level making difficult to associate each specific metadata term with the samples in the study (Figure 1).
 
 .. note:: The lack of detailed and well-structure metadata at a sample level  prevents data interpretation, reproducibility, and integration of data from different resources.
