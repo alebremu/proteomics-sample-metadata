@@ -28,7 +28,7 @@ NOTE: It is planned that, unlike in other PSI formats, regular updates will need
      - Plants
      - Cell lines
     * - source name
-      - required
+      - :octicon:`check-circle;1em;sd-text-info`
       - required
       - required
       - required
