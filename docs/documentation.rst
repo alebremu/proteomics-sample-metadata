@@ -28,7 +28,7 @@ The list of ontologies/controlled vocabularies (CV) supported are:
 Relations with other formats
 -----------------------------------------------
 
-SDRF-Proteomics is fully compatible with the SDRF file format part of MAGE-TAB (https://www.ebi.ac.uk/arrayexpress/help/magetab_spec.html). The MAGE-TAB is the file format to store the metadata and sample information on transcriptomics experiments.
+SDRF-Proteomics is fully compatible with the SDRF file format part of `MAGE-TAB https://www.ebi.ac.uk/arrayexpress/help/magetab_spec.html`_. The MAGE-TAB is the file format to store the metadata and sample information on transcriptomics experiments.
 MAGE-TAB (MicroArray Gene Expression Tabular) is a standard format for storing and exchanging microarray and other high-throughput genomics data. It consists of two spreadsheets for each experiment: the Investigation Description Format (IDF) file and the Sample and Data Relationship Format (SDRF) file.
 
 The IDF file contains general information about the experiment, such as the project title, description, and funding sources, as well as details about the experimental design, such as the type of technology used, the organism studied, and the experimental conditions.
@@ -43,12 +43,12 @@ By embedding sample metadata into the mzTab file, researchers can ensure that al
 Documentation
 -----------------------------
 
-The official website for SDRF-Proteomics project is https://github.com/bigbio/proteomics-sample-metadata. New use cases, changes to the specification and examples can be added by using Pull requests or issues in GitHub (see introduction to GitHub - https://lab.github.com/githubtraining/introduction-to-github).
+The official website for SDRF-Proteomics project is https://github.com/bigbio/proteomics-sample-metadata. New use cases, changes to the specification and examples can be added by using Pull requests or issues in GitHub (see introduction to `GitHub https://lab.github.com/githubtraining/introduction-to-github`_).
 
-A set of examples and annotated projects from ProteomeXchange can be found here: https://github.com/bigbio/proteomics-sample-metadata/tree/master/annotated-projects
+A set of examples and annotated projects from ProteomeXchange can be `found here https://github.com/bigbio/proteomics-sample-metadata/tree/master/annotated-projects`_
 
 Multiple tools have been implemented to validate SDRF-Proteomics files:
 
-- sdrf-pipelines (Python - https://github.com/bigbio/sdrf-pipelines): This tool allows a user to validate an SDRF-Proteomics file. In addition, it allows a user to convert SDRF to other popular pipelines and software configuration files such as: MaxQuant or OpenMS.
+- `sdrf-pipelines https://github.com/bigbio/sdrf-pipelines`_ (Python): This tool allows a user to validate an SDRF-Proteomics file. In addition, it allows a user to convert SDRF to other popular pipelines and software configuration files such as: MaxQuant or OpenMS.
 
-- jsdrf (Java - https://github.com/bigbio/jsdrf ): This Java library and tool allows a user to validate SDRF-Proteomics files. It also includes a generic data model that can be used by Java applications.
+- `jsdrf https://github.com/bigbio/jsdrf`_ (Java): This Java library and tool allows a user to validate SDRF-Proteomics files. It also includes a generic data model that can be used by Java applications.
