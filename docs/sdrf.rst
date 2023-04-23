@@ -325,6 +325,15 @@ Example:
 
 .. note:: Units for the mass tolerances (either Da or ppm) MUST be provided.
 
+Factor values
+=========================
+
+The variable/property under study MUST be highlighted using the **factor value** category. For example, the `factor value[disease]` is used when the main purpose of a given experiment is to compare protein expression across different diseases or different states of a given disease. Multiple variables under study can be included by adding multiple factor values columns.
+
+.. note:: “factor value” columns SHOULD indicate which experimental factor/variable is used as the hypothesis to perform the data analysis. The “factor value” columns SHOULD occur after all characteristics and attributes of the samples.
+
+
+
 
 
 
