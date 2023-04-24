@@ -101,7 +101,7 @@ Some important notes:
 Data files metadata
 ************************************
 
-The connection between the Samples to the Data files is done by using a series of properties and attributes. All the properties referring to the MS run (file) itself are annotated with the category/prefix **comment**. The use of comment is mainly aimed at differentiating sample properties from the data properties. It matches a given sample to the corresponding file(s). The word comment is used for backwards-compatibility with gene expression experiments (RNA-Seq and Microarrays experiments).
+The connection between the Samples to the Data files is done by using a series of properties and attributes. All the properties referring to the MS run (file) itself are annotated with the category/prefix :guilabel:`comment`. The use of comment is mainly aimed at differentiating sample properties from the data properties. It matches a given sample to the corresponding file(s). The word comment is used for backwards-compatibility with gene expression experiments (RNA-Seq and Microarrays experiments).
 
 The order of the columns is important, :guilabel:`assay name` MUST always be located before the comments. It is RECOMMENDED to put the last column as :guilabel:`comment[data file]`. The following properties MUST be provided for each data file (ms run) file:
 
