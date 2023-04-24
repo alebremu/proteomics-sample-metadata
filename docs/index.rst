@@ -13,7 +13,6 @@ Contents
    additional
    documentation
    tools
-
 |
 
 The following links should be followed to get support and help with the sdrf maintainers:

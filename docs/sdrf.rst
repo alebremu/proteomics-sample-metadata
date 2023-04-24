@@ -15,8 +15,8 @@ Rules
 
 There are general scenarios/use cases that are addressed by the following rules:
 
-- **Unknown values**: In some cases, the column is mandatory in the format but for some samples the corresponding value is unknown. In those cases, users SHOULD use ‘not available’.
-- **Not Applicable values**: In some cases, the column is mandatory but for some samples the corresponding value is not applicable. In those cases, users SHOULD use ‘not applicable’.
+- **Unknown values**: In some cases, the column is mandatory in the format but for some samples the corresponding value is unknown. In those cases, users SHOULD use :guilabel:`not available`.
+- **Not Applicable values**: In some cases, the column is mandatory but for some samples the corresponding value is not applicable. In those cases, users SHOULD use :guilabel:`not applicable`.
 - **Case sensitivity**: By specification the SDRF is case insensitive, but we RECOMMEND using lowercase characters throughout all the text (Column names and values).
 - **Spaces**: By specification the SDRF is case sensitive to spaces (sourcename != source name).
 - **Column order**: The SDRF MUST start with the source name column (accession/name of the sample of origin), then all the sample characteristics; followed by the assay name corresponding to the MS run. Finally, after the assay name all the comments (properties of the data file generated).
@@ -53,14 +53,14 @@ The value for each property (e.g. characteristics, comment) corresponding to eac
    * - sample 2
      - http://purl.obolibrary.org/obo/NCBITaxon_9606
 
-- Key=value representation (Human and Computer readable): The current representation aims to provide a mechanism to represent the complete information of the ontology/CV term including Accession, Name and other additional properties. In the key=value pair representation the Value of the property is represented as an Object with multiple properties, where the key is one of the properties of the object and the value is the corresponding value for the particular key. An example of key value pairs is post-translational modification <<ptms>>
+- Key=value representation (Human and Computer readable): The current representation aims to provide a mechanism to represent the complete information of the ontology/CV term including Accession, Name and other additional properties. In the key=value pair representation the Value of the property is represented as an Object with multiple properties, where the key is one of the properties of the object and the value is the corresponding value for the particular key. An example of key value pairs is post-translational modification (see :ref:`ptms`)
 
 `NT=Glu->pyro-Glu; MT=fixed; PP=Anywhere; AC=Unimod:27; TA=E`
 
 Samples metadata
 ***********************************
 
-The Sample metadata has different Categories/Headings to organize all the attributes/ column headers of a given sample. Each Sample contains a `source name` (accession) and a set of `characteristics`. Any proteomics sample MUST contain the following characteristics:
+The Sample metadata has different Categories/Headings to organize all the attributes/ column headers of a given sample. Each Sample contains a :guilabel:`source name` (accession) and a set of :guilabel:`characteristics`. Any proteomics sample MUST contain the following characteristics:
 
 - **source name**: Unique sample name (it can be present multiple times if the same sample is used several times in the same dataset).
 
@@ -98,7 +98,7 @@ Example:
 
 Some important notes:
 
-- Each characteristics name in the column header SHOULD be a CV term from the EFO ontology. For example, the header _characteristics[organism]_ corresponds to the ontology term Organism.
+- Each characteristics name in the column header SHOULD be a CV term from the EFO ontology. For example, the header :guilabel:`characteristics[organism]` corresponds to the ontology term Organism.
 
 - Multiple values (columns) for the same characteristics term are allowed in SDRF-Proteomics. However, it is RECOMMENDED not to use the same column in the same file. If you have multiple phenotypes, you can specify what it refers to or use another more specific term, e.g. "immunophenotype".
 
@@ -107,9 +107,9 @@ Data files metadata
 
 The connection between the Samples to the Data files is done by using a series of properties and attributes. All the properties referring to the MS run (file) itself are annotated with the category/prefix **comment**. The use of comment is mainly aimed at differentiating sample properties from the data properties. It matches a given sample to the corresponding file(s). The word comment is used for backwards-compatibility with gene expression experiments (RNA-Seq and Microarrays experiments).
 
-The order of the columns is important, **assay name** MUST always be located before the comments. It is RECOMMENDED to put the last column as `comment[data file]`. The following properties MUST be provided for each data file (ms run) file:
+The order of the columns is important, **assay name** MUST always be located before the comments. It is RECOMMENDED to put the last column as :guilabel:`comment[data file]`. The following properties MUST be provided for each data file (ms run) file:
 
-- **assay name**: assay name is an accession for each msrun. Because of back-compatibility with SDRF in transcriptomics we don't use the term ms run but the more generic term `assay name`. Examples of assay names are: “run 1”, “run_fraction_1_2”, it must be a unique accession for every msrun.
+- :guilabel:`assay name`: assay name is an accession for each msrun. Because of back-compatibility with SDRF in transcriptomics we don't use the term ms run but the more generic term :guilabel:`assay name`. Examples of assay names are: “run 1”, “run_fraction_1_2”, it must be a unique accession for every msrun.
 
 - **comment[fraction identifier]**: The fraction identifier allows to record the number of a given fraction. The fraction identifier corresponds to this ontology term. It MUST start from `1` and if the experiment is not fractionated, 1 MUST be used for each MSRun (assay).
 
@@ -186,6 +186,7 @@ It is RECOMMENDED to encode some of the technical parameters of the MS experimen
 - Precursor and Fragment ion mass tolerances
 - Digestion Enzymes
 
+.. _ptms:
 Protein Modifications
 ---------------------------------
 
