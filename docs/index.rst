@@ -1,4 +1,4 @@
-SDRF-Proteomics:  for Proteomics
+SDRF-Proteomics
 =======================================================================
 
 Contents

@@ -1,12 +1,12 @@
-SDRF: ample and Data Relationship Format
+SDRF: Sample and Data Relationship Format
 ########################################
 
 The SDRF-Proteomics file format describes the sample characteristics and the relationships between samples and data files. The file format is a tab-delimited one where each ROW corresponds to a relationship between a Sample and a Data file (and MS signal corresponding to labelling in the context of multiplexed experiments), each column corresponds to an attribute/property of the Sample and the value in each cell is the specific value of the property for a given Sample (**Figure 1**).
 
-
 .. image:: images/sdrf-nutshell.png
    :width: 600
    :align: center
+
 
 **Figure 2**: SDRF-Proteomics in a nutshell. The file format is a tab-delimited one where columns are properties of the sample, the data file or the variables under study. The rows are the samples of origin and the cells are the values for one property in a specific sample.
 
