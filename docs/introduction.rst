@@ -18,14 +18,12 @@ Unfortunately, proteomics experimental design and sample related information are
 
 **Figure 1**: SDRF-Proteomics file format stores the information of the sample and its relation to the data files in the dataset. The file format includes not only information about the sample but also about how the data was acquired and processed.
 
-Use cases
----------------------
+.. Important::
+   The following use cases can be defined for the format:
 
-The following use cases can be defined for the format:
-
-- Capturing the experimental design of a proteomics experiment, particularly the relationship between the samples analyzed and the instrument files generated during data acquisition in the laboratory.
-- Capturing sample metadata, including information on the source and any treatments applied that could affect data analysis.
-- Providing comprehensive metadata for instrument files, so that users can have a general understanding of how the data was acquired.
+   - Capturing the experimental design of a proteomics experiment, particularly the relationship between the samples analyzed and the instrument files generated during data acquisition in the laboratory.
+   - Capturing sample metadata, including information on the source and any treatments applied that could affect data analysis.
+   - Providing comprehensive metadata for instrument files, so that users can have a general understanding of how the data was acquired.
 
 Specifications
 ---------------------
